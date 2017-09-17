@@ -1,0 +1,12 @@
+{
+  "name": "chrome-devtools-protocol-screenshot",
+  "version": "1.0.0",
+  "description": "CLI tool to captures screenshots using chrome devtools protocol",
+  "bin": "./chrome-devtools-protocol-screenshot.js",
+  "author": "Tryggvi Gylfason",
+  "license": "Apache2",
+  "dependencies": {
+    "chrome-remote-interface": "^0.24.5",
+    "commander": "^2.11.0"
+  }
+}
