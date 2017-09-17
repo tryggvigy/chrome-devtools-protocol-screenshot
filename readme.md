@@ -2,6 +2,12 @@ This tool reads instructions from stdin or args and captures screenshots
 using the chrome devtools protocol from a running blink-based
 browser instance at various given breakpoints.
 
+```npm install -g chrome-devtools-protocol-screenshot```
+
+and then start on your chromium browsers remote debug port.
+
+```chrome-devtools-protocol-screenshot.js -p 9222```
+
 #### Stdin
 If you have a `inst.json` like the following (you can use any uri, for example http://example.com)
 ```json
