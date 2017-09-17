@@ -41,6 +41,7 @@ convert '(' img1.png ')' \
         '(' -clone 0-1 -compose darken -composite ')' \
         -channel RGB -combine diff.png
 ```
+![](https://imgur.com/a/u022f)
 
 ```
 compare foo_prod.png foo_dev.png diff.png
