@@ -94,17 +94,25 @@ function singlePage(data) {
       .getLayoutMetrics()
       .then(r => r.layoutViewport)
 
-    for(b of program.breakPoints) {
-      await Emulation.setVisibleSize({
-        width: b,
-        height: originalDimentions.clientHeight,
-      });
+    if (program.breakPoints) {
+      for(b of program.breakPoints) {
+        await Emulation.setVisibleSize({
+          width: b,
+          height: originalDimentions.clientHeight,
+        });
 
+        const b64Img = await Page.captureScreenshot();
+        const buffer = new Buffer(b64Img.data, 'base64');
+
+        fs.writeFileSync(`${dir}/${b}.png`, buffer);
+        console.log(`wrote: ${dir}/${b}.png`);
+      }
+    } else {
       const b64Img = await Page.captureScreenshot();
       const buffer = new Buffer(b64Img.data, 'base64');
 
-      fs.writeFileSync(`${dir}/${b}.png`, buffer);
-      console.log(`wrote: ${dir}/${b}.png`);
+      fs.writeFileSync(`${dir}/out.png`, buffer);
+      console.log(`wrote: ${dir}/out.png`);
     }
 
     // Reset the client size.
