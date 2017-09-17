@@ -1,5 +1,6 @@
 {
   "name": "chrome-devtools-protocol-screenshot",
+  "repository": "tryggvigy/chrome-devtools-protocol-screenshot",
   "version": "1.0.0",
   "description": "CLI tool to captures screenshots using chrome devtools protocol",
   "bin": "./chrome-devtools-protocol-screenshot.js",
