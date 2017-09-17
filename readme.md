@@ -33,7 +33,8 @@ in the chromium app and output them to ./captures.
 
 ## Comparison
 
-I like to use ImageMagik. The following two comparisons are good.
+You can use whatever image comparison tool you like.
+I like to use ImageMagik.
 
 ```
 convert '(' img1.png ')' \
@@ -41,8 +42,11 @@ convert '(' img1.png ')' \
         '(' -clone 0-1 -compose darken -composite ')' \
         -channel RGB -combine diff.png
 ```
-![](https://imgur.com/a/u022f)
+Generates:
+![](https://i.imgur.com/RqAOcdW.png)
 
 ```
 compare foo_prod.png foo_dev.png diff.png
 ```
+Generates:
+![](https://i.imgur.com/eeyo050.png)
